@@ -33,7 +33,7 @@
 
 
 <h1 align="left">
-   <code>𝙳𝙴𝙿𝙻𝙾𝚈_𝙾𝙽_𝙷𝙴𝚁𝙾𝙺𝚄</code>
+   <code>𝙳𝙴𝙿𝙻𝙾𝚈</code>
 </h1>
 
 
