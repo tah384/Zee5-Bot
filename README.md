@@ -1,5 +1,5 @@
 <h1 align="center">
-  <b> 𝚉𝙴𝙴5_𝙱𝙾𝚃 </b>
+  <code> 𝚉𝙴𝙴5_𝙱𝙾𝚃 </code>
 </h1>
 
 <p align="center" > <img alt="GitHub forks" src="https://img.shields.io/github/forks/Tellybots/Zee5-Bot?label=%F0%9F%8D%B4Forks&logoColor=blue&style=social">
@@ -33,7 +33,7 @@
 
 
 <h1 align="left">
-   <code>𝙳𝙴𝙿𝙻𝙾𝚈 𝙾𝙽 𝙷𝙴𝚁𝙾𝙺𝚄</code>
+   <code>𝙳𝙴𝙿𝙻𝙾𝚈_𝙾𝙽_𝙷𝙴𝚁𝙾𝙺𝚄</code>
 </h1>
 
 
