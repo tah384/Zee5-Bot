@@ -36,7 +36,7 @@
     },
     "OWNER_ID": {
       "description": "Your Telegram ID",
-      "value": ""
+      "value": "5976437467"
     },
     "DATABASE_URL": {
       "description": "Your MongoDB URI",
