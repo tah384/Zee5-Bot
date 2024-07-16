@@ -14,3 +14,5 @@ psutil
 pyrogram
 tgcrypto
 yt-dlp
+Flask
+gunicorn
