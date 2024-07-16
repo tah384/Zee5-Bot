@@ -24,15 +24,15 @@
     },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
-      "value": ""
+      "value": "7355006985:AAEY8ijg4CP-8GgcliRGJja87Tby78QT7To"
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "29426486"
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "d71ad4ec048ab41677a1a439b21ff0c9"
     },
     "OWNER_ID": {
       "description": "Your Telegram ID",
@@ -44,7 +44,7 @@
     },
     "SESSION_NAME": {
       "description": "Your Session Name",
-      "value": "URL-UPLOADER"
+      "value": "Itxmety73_bot"
     },
     "CHUNK_SIZE": {
       "description": "chunk size that should be used with requests",
