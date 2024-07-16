@@ -1,24 +1,24 @@
-# 🍁 Fast & High Quality YT Downloader Bot 🔥
+from telegram.ext import Updater, CommandHandler
+import requests
 
-from pyrogram import Client
-import config
+TOKEN = "7355006985:AAEY8ijg4CP-8GgcliRGJja87Tby78QT7To"
 
-DOWNLOAD_LOCATION = "./Downloads"
-BOT_TOKEN = config.BOT_TOKEN
+def download_ott(update, context):
+    url = context.args[0]
+    r = requests.get(url)
 
-APP_ID = config.APP_ID
-API_HASH = config.API_HASH
+    with open("downloaded_ott_content.mp4", "wb") as f:
+        f.write(r.content)
 
+    update.message.reply_text("OTT content downloaded successfully! 🎥🔥")
 
-plugins = dict(
-    root="plugins",
-)
+def main():
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+    dp.add_handler(CommandHandler("download_ott", download_ott))
 
-Client(
-    "YouTubeDlBot",
-    bot_token=BOT_TOKEN,
-    api_id=APP_ID,
-    api_hash=API_HASH,
-    plugins=plugins,
-    workers=100
-).run()
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
