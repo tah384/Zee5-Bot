@@ -1,28 +1,24 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# 🍁 Fast & High Quality YT Downloader Bot 🔥
 
-import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+from pyrogram import Client
+import config
 
-import os
-from plugins.config import Config
+DOWNLOAD_LOCATION = "./Downloads"
+BOT_TOKEN = config.BOT_TOKEN
 
-from pyrogram import Client as Tellybots
-from pyrogram import filters
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
+APP_ID = config.APP_ID
+API_HASH = config.API_HASH
 
 
-if __name__ == "__main__" :
-    # create download directory, if not exist
-    if not os.path.isdir(Config.DOWNLOAD_LOCATION):
-        os.makedirs(Config.DOWNLOAD_LOCATION)
-    plugins = dict(root="plugins")
-    Tellybots = Tellybots(
-        "Zee5 Dl Bot",
-        bot_token=Config.TG_BOT_TOKEN,
-        api_id=Config.APP_ID,
-        api_hash=Config.API_HASH,
-        plugins=plugins)
-    Tellybots.run()
+plugins = dict(
+    root="plugins",
+)
+
+Client(
+    "YouTubeDlBot",
+    bot_token=BOT_TOKEN,
+    api_id=APP_ID,
+    api_hash=API_HASH,
+    plugins=plugins,
+    workers=100
+).run()
