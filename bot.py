@@ -1,24 +1,27 @@
-from telegram.ext import Updater, CommandHandler
-import requests
+# -*- coding: utf-8 -*-
 
-TOKEN = "7355006985:AAEY8ijg4CP-8GgcliRGJja87Tby78QT7To"
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
-def download_ott(update, context):
-    url = context.args[0]
-    r = requests.get(url)
+import os
+from plugins.config import Config
 
-    with open("downloaded_ott_content.mp4", "wb") as f:
-        f.write(r.content)
+from pyrogram import Client as Tellybots
+from pyrogram import filters
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-    update.message.reply_text("OTT content downloaded successfully! 🎥🔥")
 
-def main():
-    updater = Updater(TOKEN, use_context=True)
-    dp = updater.dispatcher
-    dp.add_handler(CommandHandler("download_ott", download_ott))
-
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__" :
+    # create download directory, if not exist
+    if not os.path.isdir(Config.DOWNLOAD_LOCATION):
+        os.makedirs(Config.DOWNLOAD_LOCATION)
+    plugins = dict(root="plugins")
+    Tellybots = Tellybots(
+        "Zee5 Dl Bot",
+        bot_token=Config.TG_BOT_TOKEN,
+        api_id=Config.APP_ID,
+        api_hash=Config.API_HASH,
+        plugins=plugins)
+    Tellybots.run()
